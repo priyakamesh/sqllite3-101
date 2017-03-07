@@ -18,4 +18,17 @@ const populateEmployees =()=>{
   db.run(`INSERT INTO employees VALUES (${each.id}, "${each.firstName}", "${each.lastName}",${each.salary},"${each.Dept}")`)
  });
 };
-populateEmployees();
+// populateEmployees();
+
+//QUERY METHODS
+//get not effective bcoz  it returns only first row
+    // db.get(`SELECT * FROM employees`, (err,row)=>{
+    //   console.log(row);
+    // })
+
+db.all(`SELECT * FROM employees`,(err,allRows)=>{
+  // console.log(allRows)
+  allRows.forEach(({id,first,last,Dept,salary}) =>{
+    console.log(`${id} ${first} ${last} From ${Dept} Department SALARY:${salary}` )
+  });
+})
