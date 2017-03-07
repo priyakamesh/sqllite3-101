@@ -7,14 +7,14 @@ const db = new sqlite3.Database('example.sqlite');//db is the database object
 // };
 
 // //CREATE A TABLE USING JS
-db.run("CREATE TABLE IF NOT EXISTS employees (id INT,first TEXT,last TEXT,title TEXT,address TEXT)");
+// db.run("CREATE TABLE IF NOT EXISTS employees (id INT,first TEXT,last TEXT,title TEXT,address TEXT)");
 
 // // db.run('INSERT INTO employees VALUES (1,"Priya","Kamesh",600000)') //NOT SO EFFICIENT
 
 const populateEmployees =()=>{
  const {list} = require('./employees.json');
- list.forEach(({id,firstName,lastName,jobTitle,address}) => {
-  db.run(`INSERT INTO employees VALUES (${id}, "${firstName}", "${lastName}","${jobTitle}","${address}")`)
+ list.forEach(({id,firstName,lastName,jobTitle,address,salary}) => {
+  db.run(`INSERT INTO employees VALUES (${id}, "${firstName}", "${lastName}","${jobTitle}","${address}",${salary})`)
  });
 };
 // populateEmployees();
@@ -40,10 +40,11 @@ db.all(`SELECT first,last,address FROM employees`,(err,allRows)=>{
     console.log(`${first} ${last} ${address}`)
   })
 })
-// db.each(`SELECT * FROM employees`,(err,{id,first,last,Dept,salary}) => { //each(callback) will fire for each object, so good for larger databases(its basically storing chunks of data)
-//   console.log(new Date().getMilliseconds())
-//   console.log(`${id} ${first} ${last} From ${Dept} Department SALARY:${salary}`);
-//
+db.each(`SELECT * FROM employees`,(err,{id,first,last,Dept,salary}) => { //each(callback) will fire for each object, so good for larger databases(its basically storing chunks of data)
+  console.log(new Date().getMilliseconds())
+  console.log(`${id} ${first} ${last} From ${Dept} Department SALARY:${salary}`);
+});
+
 
 
 
