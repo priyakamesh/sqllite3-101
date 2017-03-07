@@ -26,9 +26,26 @@ const populateEmployees =()=>{
     //   console.log(row);
     // })
 
-db.all(`SELECT * FROM employees`,(err,allRows)=>{
-  // console.log(allRows)
-  allRows.forEach(({id,first,last,Dept,salary}) =>{
-    console.log(`${id} ${first} ${last} From ${Dept} Department SALARY:${salary}` )
-  });
+// db.all(`SELECT * FROM employees`,(err,allRows)=>{ //all(callback) will fire once
+//   allRows.forEach(({id,first,last,Dept,salary}) =>{
+//     console.log(`${id} ${first} ${last} From ${Dept} Department SALARY:${salary}` )
+//   });
+// })
+
+// db.each(`SELECT * FROM employees`,(err,{id,first,last,Dept,salary}) => { //each(callback) will fire for each object, so good for larger databases(its basically storing chunks of data)
+//   console.log(new Date().getMilliseconds())
+//   console.log(`${id} ${first} ${last} From ${Dept} Department SALARY:${salary}`);
+//
+
+
+
+//1.sort all by alphabetically
+//2.create a new array of all employees more than 50000
+db.all(`SELECT first,last,salary FROM employees
+        WHERE employees.salary > 50000
+        GROUP BY employees.first`,(err,allRows)=>{
+          if(err) {return console.log(err)}
+  allRows.forEach(({id,first,last,Dept,salary})=>{
+    console.log(` ${first} ${last} SALARY:${salary}`);
+  })
 })
