@@ -1,0 +1,10 @@
+{
+  "list": [
+    { "id": "1", "firstName": "Dwight", "lastName": "Schrute", "jobTitle": "cashier" ,"address": "500 Somewhere Lane","salary": 30000},
+    { "id": "2", "firstName": "Holly", "lastName": "Fax", "jobTitle": "Manager" ,"address": "500 Somewhere Lane","salary": 70000 },
+    { "id": "3", "firstName": "Jim", "lastName": "Halpert", "jobTitle": "Marketing Head" ,"address": "500 Somewhere Lane","salary": 55000},
+    { "id": "4", "firstName": "Pam", "lastName": "Beesly", "jobTitle": "Sales Person" ,"address": "500 Somewhere Lane","salary": 30000},
+    { "id": "5", "firstName": "Michael", "lastName": "Scott", "jobTitle": "Production Head" ,"address": "500 Somewhere Lane","salary": 80000 },
+    { "id": "6", "firstName": "Stanley", "lastName": "Hudson", "jobTitle": "Assistant Regional Manager" ,"address": "500 Somewhere Lane","salary": 80000 }
+  ]
+}
