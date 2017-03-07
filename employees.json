@@ -1,10 +1,10 @@
 {
   "list": [
-    { "id": "1", "firstName": "Dwight", "lastName": "Schrute", "salary": 45000 ,"Dept": "Sales"},
-    { "id": "2", "firstName": "Holly", "lastName": "Fax", "salary": 47000,"Dept": " Production" },
-    { "id": "3", "firstName": "Jim", "lastName": "Halpert", "salary": 55000,"Dept": "Sales" },
-    { "id": "4", "firstName": "Pam", "lastName": "Beesly", "salary": 52000,"Dept": "Marketing" },
-    { "id": "5", "firstName": "Michael", "lastName": "Scott", "salary": 60000,"Dept": "Marketing" },
-    { "id": "6", "firstName": "Stanley", "lastName": "Hudson", "salary": 55000,"Dept": "Production" }
+    { "id": "1", "firstName": "Dwight", "lastName": "Schrute", "jobTitle": "cashier" ,"address": "500 Somewhere Lane"},
+    { "id": "2", "firstName": "Holly", "lastName": "Fax", "jobTitle": "Manager" ,"address": "500 Somewhere Lane" },
+    { "id": "3", "firstName": "Jim", "lastName": "Halpert", "jobTitle": "Marketing Head" ,"address": "500 Somewhere Lane"},
+    { "id": "4", "firstName": "Pam", "lastName": "Beesly", "jobTitle": "Sales Person" ,"address": "500 Somewhere Lane"},
+    { "id": "5", "firstName": "Michael", "lastName": "Scott", "jobTitle": "Production Head" ,"address": "500 Somewhere Lane" },
+    { "id": "6", "firstName": "Stanley", "lastName": "Hudson", "jobTitle": "Assistant Regional Manager" ,"address": "500 Somewhere Lane" }
   ]
 }
